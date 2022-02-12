@@ -7,43 +7,69 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bellybutton Biodiversity</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.min.css">
 </head>
 
 <body>
 
   <div class="container">
+
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
         <h1>Belly Button Biodiversity Dashboard</h1>
         <p>Use the interactive charts below to explore the dataset</p>
       </div>
     </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h1 id="about" class="panel-title" style="font-size: 40px; color: whitesmoke;"> About The Visualization</h1>
+      </div>
+      <div class="panel-body"> 
+        <p style="font-size: 20px; color: whitesmoke;">The dashboard is a visualization of bacterial data found in the belly buttons volunteers. 
+          There are 3 charts that show a diferent set of data; The bar chart shows the 10 most common bacterial species, the bubble chart shows the species with the highest concentration per individual, and the gauge chart shows the washing frequency for each individual.
+          <a href="https://github.com/ArnavAnjaria/Belly-Button-Biodiversity" target="_blank">Code can be found here</a>
+        </p>
+      </div>
+    
+    </div>
+
     <div class="row">
+
       <div class="col-md-2">
         <div class="well">
           <h5>Test Subject ID No.:</h5>
           <!-- <select id="selDataset"></select> -->
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          <select id="selDataset" onchange="optionChanged(this.value)" style="color: black;"></select>
         </div>
+
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title">Demographic Info</h3>
           </div>
           <div id="sample-metadata" class="panel-body"></div>
         </div>
+        <div class="panel-body">Demographic info of the selected individual.</div>
       </div>
+
       <div class="col-md-5">
         <div id="bar"></div>
+        <div class="panel-body">This is a bar chart that shows the top 10 bacterial species of the selected individual.</div>
       </div>
+
       <div class="col-md-5">
         <div id="gauge"></div>
+        <div class="panel-body">This is a gauge chart that shows the weekly belly button washing frequency of the selected individual.</div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-md-12">
         <div id="bubble"></div>
+        <div class="panel-body">This is a bubble chart that shows teh bacterial species concentrations of the selected individual.</div>
       </div>
     </div>
+
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
